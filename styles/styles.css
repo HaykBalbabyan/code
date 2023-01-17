@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Rokkitt:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+:root{
+    --red:#f15a60;
+    --orange:#e28a61;
+    --yellow:#fdaf4a;
+    --lime:#81a80c;
+    --green:#238837;
+    --cyan:#03ADA4;
+    --sky:#36a9ff;
+    --blue:#2155b6;
+    --purple:#ac63dd;
+    --violet:#80419D;
+    --magenta:#871E57;
+    --pink:#ED297B;
+    --dark:#000008;
+    --dark-lighter:#0d0d13;
+    --dark-light:#141418;
+    --light:#f8f8ff;
+    --light-darker:#d4d4f1;
+    --light-dark:#ddddf3;
+}
+/*  */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px    ;
+}
+::-webkit-scrollbar-track {
+    background: #191920; 
+}
+::-webkit-scrollbar-thumb {
+    background: #232329 ;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2e2e36; 
+}
+svg path{
+    width: 100%;
+    height: 100%;
+}
+
+/* Dark body */
+body.dark{
+    background: var(--dark);
+}
+/* Light body */
+body.light{
+    background: var(--light);
+}
+body *{  
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+body{
+    display: flex;
+    height: 100vh;
+    gap:0;
+}
+/* left menu */
+/* Dark */
+body.dark .menu{
+    background: var(--dark);
+    color:white;
+}
+body.dark .menu .logo a{
+    color:black;
+    filter: invert(1);
+}
+body.dark .open-menu li input::before{
+    background:var(--dark-light);
+    color:white;
+}
+body.dark .open-menu li input:checked::before{
+    background:#191920;
+}
+body.dark .main .header{
+    background:var(--dark);
+}
+body.dark .main .header button{
+    background:var(--dark-light);
+    color:white;
+}
+body.dark .main .header button.selected{
+    background:#191920;
+}
+
+/* Light */
+body.light .menu{
+    background: var(--light);
+    color:black;
+}
+body.light .menu .logo a{
+    color:white;
+    filter: invert(1);
+}
+body.light .menu .logo a img{
+    filter: invert(1);
+}
+body.light .open-menu li input::before{
+    display: flex;
+    background:var(--light-dark);
+    color:#303030;
+}
+body.light .open-menu li input:checked::before{
+    background:#c8c8ff;
+}
+body.light .main .header{
+    background:var(--light);
+}
+body.light .main .header button{
+    background:var(--light-dark);
+    color:#303030;
+}
+body.light .main .header button.selected{
+    background:#cfcff0;
+}
+
+
+
+body .menu{
+    width:240px;
+    height: 100vh;
+    padding: 20px;
+    z-index: 10;
+}
+body .menu .logo a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+}
+body .open-menu li input::before{
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    visibility: visible;
+    cursor: pointer;
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 500;
+}
+body .main .header{
+    padding: 10px 0 0;
+    display: flex;
+    position: relative;
+}
+body .main .header button{
+    justify-content: center;
+    padding: 10px 20px;
+    border: 0;
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 10;
+}
+.menu .logo a img{width:50px; margin-right: 10px;}
+.menu ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.menu button{
+    width: 100%;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border:0;
+    font-size: 14px;
+    cursor: pointer;
+    color:white;
+}
+.menu button svg{
+    margin-right: 5px;
+    font-weight: 600;
+}
+#run{
+    background: var(--green);
+}
+#download{
+    background: var(--blue);
+}
+.open-menu li input{
+    width: 100%;
+    visibility: hidden;
+    margin-bottom: 15px;
+}
+.open-menu li{
+    width: 100%;
+    display: flex;
+    gap:3px;
+}
+.open-menu ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.open-menu .gear{
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    float: right;
+}
+.open-menu .gear::before{
+    content:"\f013";    
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 900;
+    font-size: 20px;
+    float: right;
+}
+#dark::before{
+    content:"\f186"
+}
+#light::before{
+    content:"\f185"
+}
+#classic::before{
+    content: "\e290";
+}
+#tabs::before{
+    content: "\f0db";
+}
+#table::before{
+    content:"\f009"
+}
+/* main */
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+}
+.editor{
+    width: 100%;
+    height: 100%;
+}
+.menu-openclose{
+    display: none;
+}
+@media (max-width:1019px){
+    body{
+        width: 100vw;
+    }
+    .menu{
+        display: none;
+        z-index: 999;
+        position: absolute;
+    }
+    body.dark .menu{
+        box-shadow: 5px 0px 14px -1px rgba(90, 90, 90, 0.2);
+    }
+    body .main .header{
+        padding: 0;
+    }
+    body .main .header button{
+        height: 60px;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 600;
+    }
+    body .main .header button svg{
+        width: 23px;
+        height: 23px;
+    }
+    body .editor,
+    body .header{
+        width: 100vw!important;
+    }
+    .dark .menu-openclose{
+        background: var(--dark);
+        color: white;
+        box-shadow: 5px 0px 14px -1px rgba(90, 90, 90, 0.2);
+    }
+    .menu-openclose{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 999999;
+        width:25px;
+        height: 60px;
+        font-size: 22px;
+        border-top-right-radius: 9px;
+        border-bottom-right-radius: 9px;
+        cursor: pointer;    
+        top: calc(50% - (39px / 2));
+    }
+    .menu-openclose.rotate{
+        transform: rotate(180deg);
+        border-top-left-radius: 9px;
+        border-bottom-left-radius: 9px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow-offset-x:3px
+    }
+    .CodeMirror *{
+        font-size: 18px;
+    }
+    .menu ul li ul li.last{
+        display: none;
+    }
+}

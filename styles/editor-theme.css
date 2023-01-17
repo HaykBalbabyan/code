@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Rokkitt:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.CodeMirror{
+    max-width:100px;
+    min-width:100%;
+    max-height: 100%;
+    min-height: 100%;
+    overflow-wrap: break-word;
+}
+.CodeMirror *{
+    font-family: 'Rokkitt', serif!important;
+}
+/* dark */
+body.dark .CodeMirror-cursor{
+    border-color: #d3d3d3;
+}
+body.dark .CodeMirror-scroll{
+    background: #0E0E14;
+}
+body.dark .CodeMirror-sizer{
+    font-family: 'Rokkitt', serif!important;
+    font-size: 16px;
+    font-weight: 450;
+    color: #d3d3d3;
+}
+body.dark .CodeMirror-gutters{
+    border-color: #0D0D13;
+}
+body.dark .CodeMirror-linenumbers{
+    background: #191920;
+}
+body.dark .cm-tag.cm-bracket{
+    color:#818181;
+}
+/* Light */
+body.light .CodeMirror-cursor{
+    border-color: #131313;
+}
+body.light .CodeMirror-scroll{
+    background: #e9e9ff;
+}
+body.light .CodeMirror-sizer{
+    font-family: 'Rokkitt', serif!important;
+    font-size: 16px;
+    font-weight: 450;
+    color: #131313;
+    
+}
+body.light .CodeMirror-gutters{
+    border-color: #dfdfff;
+}
+body.light .CodeMirror-linenumbers{
+    background: #e8e8ff;
+}
+body.light .cm-tag.cm-bracket{
+    color:#999999;
+}
+
+
+body span:not(.cm-tag).cm-error{
+    color:var(--red)
+}
+body .cm-tag{
+    color: var(--blue);
+}
+body .cm-property,
+body .cm-variable-2,
+body .cm-keyword,
+body .cm-meta,
+body .cm-attribute{
+    color: var(--sky)
+}
+body .cm-atom,
+body .cm-number,
+body .cm-string{
+    color: var(--orange);
+}
+body .cm-variable-3,
+body .cm-builtin,
+body .cm-qualifier{
+    color:var(--yellow);
+}
+body .cm-def,
+body .cm-variable{
+    color:#ffd272;
+}
+body .cm-comment{
+    color: var(--green);
+}
