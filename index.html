@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>InfinityCloud Code editor | v2(beta 2)</title>
+    <link rel="icon" href="source/logo.svg">
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- <script src="scripts/filesaver.js"></script> -->
@@ -15,28 +16,39 @@
     <script src="base/mode/xml/xml.js"></script>
     <script src="base/mode/css/css.js"></script>
     <script src="scripts/script.js"></script>
-    <script src="scripts/fa6.js"></script>
+    <!-- <script src="scripts/fa6.js"></script> -->
     <!-- Styles -->
-    <link rel="stylesheet" href="base/lib/codemirror.css">   
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="base/lib/codemirror.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">   
+    <link rel="stylesheet" href="styles/styles.css">  
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href="styles/editor-theme.css">
     <link rel="stylesheet" href="base/theme/dracula.css">
 </head>
 <body class="dark">
+    <div class="loading">
+        <div class="spinner"></div>
+        <h1>Loading...</h1>
+    </div>
     <div class="menu">
         <ul>
             <li class="logo">
                 <a href="http://code.infinitycloud.fun">
-                    <img src="source/logo.svg" alt="InfinityCloud">
-                    <span>InfinityCloud</span>
+                    <img src="source/logo_long.svg" alt="InfinityCloud">
                 </a>
             </li>
-            <li>
+            <li class="runOpen">
                 <button id="run"><span class="fa-solid fa-play"></span> Run</button>
+                <button id="open"><span class="fa-solid fa-arrow-up-right-from-square"></span></button>
             </li>
             <li>
                 <button id="download"><span class="fa-solid fa-download"></span> Download files</button>
             </li>
+            <!-- <li>
+                <input type="text" id="download-name" placeholder="Downloading file name">
+            </li> -->
+        </ul>
+        <ul>
             <li class="open-menu">
                 <ul>
                     <li>Themes</li>
@@ -68,7 +80,9 @@
             <textarea class="editor-js">//Type JavaScript here!</textarea>
         </div>
         <div class="result">
-            <!-- <iframe class="window"></iframe> -->
+            <iframe class="window"></iframe>
+            <div class="topBar"><img><span id="close" class="fa-solid fa-xmark"></span></div>
+            
         </div>
     </div>
 

@@ -10,3 +10,6 @@
 .cm-s-dracula .CodeMirror-selected { background: #4e8cbb81; }
 ::selection { background: #4e8cbb81; }
 ::-moz-selection { background: #4e8cbb81; }
+@media (max-width:1019px) {
+    
+}
